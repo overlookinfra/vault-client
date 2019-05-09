@@ -26,8 +26,8 @@
 
 
 [[constraint]]
+  branch = "master"
   name = "github.com/hashicorp/vault"
-  revision = "284600fbefc32d8ab71b6b9d1d226f2f83b56b1d"
 
 [prune]
   go-tests = true

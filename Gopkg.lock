@@ -84,17 +84,20 @@
   revision = "061bf373e402ebb186988085a71ac748949594a9"
 
 [[projects]]
-  digest = "1:c3404551b349d2811149279839411ab1ef4bfcbbae8f407195e6b95dddc0b308"
+  branch = "master"
+  digest = "1:a94ed8a75bb465bae51946e5cfaac2d2cc790fb3070715325e243eccbd6b0c4b"
   name = "github.com/hashicorp/vault"
   packages = [
     "api",
-    "helper/compressutil",
-    "helper/jsonutil",
-    "helper/parseutil",
-    "helper/strutil",
+    "sdk/helper/compressutil",
+    "sdk/helper/consts",
+    "sdk/helper/hclutil",
+    "sdk/helper/jsonutil",
+    "sdk/helper/parseutil",
+    "sdk/helper/strutil",
   ]
   pruneopts = "UT"
-  revision = "284600fbefc32d8ab71b6b9d1d226f2f83b56b1d"
+  revision = "f1799885c10cfe33e38e1f91ddd757e2a8ed7941"
 
 [[projects]]
   branch = "master"
@@ -111,6 +114,17 @@
   packages = ["."]
   pruneopts = "UT"
   revision = "00c29f56e2386353d58c599509e8dc3801b0d716"
+
+[[projects]]
+  digest = "1:259f9b7645983a7a823318d78aa96dec68af8891f706493ac1ec04d819cb977c"
+  name = "github.com/pierrec/lz4"
+  packages = [
+    ".",
+    "internal/xxh32",
+  ]
+  pruneopts = "UT"
+  revision = "d705d4371bfccdf47f10e45584e896026c83616f"
+  version = "v2.2.3"
 
 [[projects]]
   digest = "1:0028cb19b2e4c3112225cd871870f2d9cf49b9b4276531f03438a88e94be86fe"
@@ -146,6 +160,18 @@
   pruneopts = "UT"
   revision = "12b6f73e6084dad08a7c6e575284b177ecafbc71"
   version = "v1.2.1"
+
+[[projects]]
+  branch = "master"
+  digest = "1:b8fa1ff0fc20983395978b3f771bb10438accbfe19326b02e236c1d4bf1c91b2"
+  name = "golang.org/x/crypto"
+  packages = [
+    "ed25519",
+    "ed25519/internal/edwards25519",
+    "pbkdf2",
+  ]
+  pruneopts = "UT"
+  revision = "e1dfcc566284e143ba8f9afbb3fa563f2a0d212b"
 
 [[projects]]
   branch = "master"
@@ -190,6 +216,19 @@
   packages = ["rate"]
   pruneopts = "UT"
   revision = "9d24e82272b4f38b78bc8cff74fa936d31ccd8ef"
+
+[[projects]]
+  digest = "1:9593bab40e981b1f90b7e07faeab0d09b75fe338880d08880f986a9d3283c53f"
+  name = "gopkg.in/square/go-jose.v2"
+  packages = [
+    ".",
+    "cipher",
+    "json",
+    "jwt",
+  ]
+  pruneopts = "UT"
+  revision = "730df5f748271903322feb182be83b43ebbbe27d"
+  version = "v2.3.1"
 
 [solve-meta]
   analyzer-name = "dep"
