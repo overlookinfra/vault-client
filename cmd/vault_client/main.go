@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/puppetlabs/cloud-discovery/vault/pkg/client"
+	"github.com/puppetlabs/vault-client/pkg/client"
 )
 
 func main() {

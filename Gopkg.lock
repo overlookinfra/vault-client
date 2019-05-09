@@ -135,14 +135,6 @@
   version = "v1.0.0"
 
 [[projects]]
-  digest = "1:3fc7888cdafc9087982fbb64a551b7ae2cc3c83d5d101859fb8cd0d7ed51a7b0"
-  name = "github.com/puppetlabs/cloud-discovery"
-  packages = ["vault/pkg/client"]
-  pruneopts = "UT"
-  revision = "e582b797a38f8c42010cab2fee14ce6c03a546ff"
-  version = "v1.10.0-e582b79"
-
-[[projects]]
   digest = "1:0e792eea6c96ec55ff302ef33886acbaa5006e900fefe82689e88d96439dcd84"
   name = "github.com/ryanuber/go-glob"
   packages = ["."]
@@ -235,7 +227,6 @@
   analyzer-version = 1
   input-imports = [
     "github.com/hashicorp/vault/api",
-    "github.com/puppetlabs/cloud-discovery/vault/pkg/client",
     "github.com/stretchr/testify/assert",
     "github.com/stretchr/testify/require",
   ]
