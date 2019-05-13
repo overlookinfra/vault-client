@@ -89,6 +89,7 @@ func unmarshalPostBody(postBody io.Reader) (map[string]interface{}, error) {
 }
 
 func vaultHTTP(method, path string, body io.Reader, vaultClient *vault_api.Client, token string) ([]byte, error) {
+	vaultClient.SetToken(token)
 	request := vaultClient.NewRequest(method, fmt.Sprintf("/%s/%s", apiVersion, path))
 	postBody, err := unmarshalPostBody(body)
 	if err != nil {
