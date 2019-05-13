@@ -150,7 +150,7 @@ func (vaultClient *VaultClient) VaultPut(path string, body io.Reader) ([]byte, e
 
 // Error - gets error message from HTTPStatusError
 func (e HTTPStatusError) Error() string {
-	return fmt.Sprintf("request to %s resulted in status: %d", e.Path, e.StatusCode)
+	return fmt.Sprintf("request to %s resulted in status: %d with body: %s", e.Path, e.StatusCode, e.Body)
 }
 
 // HTTPStatusCode - gets status code from HTTPStatusError
