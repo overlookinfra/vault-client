@@ -25,6 +25,7 @@ type Cert struct {
 
 // HTTPStatusError - HTTP status error
 type HTTPStatusError struct {
+	Body       string
 	Path       string
 	StatusCode int
 }
@@ -104,7 +105,15 @@ func vaultHTTP(method, path string, body io.Reader, vaultClient *vault_api.Clien
 	defer resp.Body.Close()
 
 	if resp.StatusCode < 200 || resp.StatusCode >= 300 {
-		return nil, NewHTTPStatusError(path, resp.StatusCode)
+		var body string
+		bodyBytes, err := ioutil.ReadAll(resp.Body)
+		if err != nil {
+			body = fmt.Sprintf("couldn't read body because: %s", err)
+		} else {
+			body = string(bodyBytes)
+		}
+
+		return nil, NewHTTPStatusError(path, resp.StatusCode, body)
 	}
 	responseBytes, err := ioutil.ReadAll(resp.Body)
 	return responseBytes, nil
@@ -150,8 +159,9 @@ func (e HTTPStatusError) HTTPStatusCode() int {
 }
 
 // NewHTTPStatusError - creates HTTPStatusError using path and statusCode
-func NewHTTPStatusError(path string, statusCode int) HTTPStatusError {
+func NewHTTPStatusError(path string, statusCode int, body string) HTTPStatusError {
 	return HTTPStatusError{
+		Body:       body,
 		Path:       path,
 		StatusCode: statusCode,
 	}
